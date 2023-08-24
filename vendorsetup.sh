@@ -64,7 +64,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
  export FOX_BUILD_TYPE="Stable"
 
 # vanilla build
-	export OF_VANILLA_BUILD="1"
+	export FOX_VANILLA_BUILD="1"
 
  # enable Flashlight
     export OF_FLASHLIGHT_ENABLE="1"
