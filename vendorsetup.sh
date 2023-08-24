@@ -53,24 +53,29 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
  export FOX_USE_XZ_UTILS=1
  export OF_ENABLE_LPTOOLS=1
 
- # Version & Variant
- export FOX_VERSION="R11.1"
- export FOX_VARIANT="A12.1"
-
  # MIUI & Custom ROMs
- export OF_VIRTUAL_AB_DEVICE=1
+ export FOX_VIRTUAL_AB_DEVICE=1
  export OF_NO_MIUI_PATCH_WARNING=1
  export OF_PATCH_AVB20=1
 
- # Disable Flashlight & Green LED
- export OF_FLASHLIGHT_ENABLE=0
- export OF_USE_GREEN_LED=0
+ # R12.1 Settings
+ export FOX_VERSION="R12.1"
+ export OF_MAINTAINER="kelvin"
+ export FOX_BUILD_TYPE="Stable"
 
- # Use magisk 25.2 for the magisk addon
- export FOX_USE_SPECIFIC_MAGISK_ZIP="$PWD/device/xiaomi/spes/addon/Magisk-v25.2.zip"
+# vanilla build
+	export OF_VANILLA_BUILD="1"
+
+ # enable Flashlight
+    export OF_FLASHLIGHT_ENABLE="1"
+	export OF_FL_PATH1="/sys/class/leds/flashlight-back"
+   export OF_FL_PATH2="/sys/class/leds/led:torch"
+
+ # Use magisk 26.1 for the magisk addon
+ export FOX_USE_SPECIFIC_MAGISK_ZIP="$PWD/device/xiaomi/spes/addon/Magisk-v26.1.zip"
 
  # Security (Disables MTP&ADB during password prompt)
- export FOX_ADVANCED_SECURITY=1
+ export OF_ADVANCED_SECURITY=1
 
  # Screen settings
  export OF_SCREEN_H=2400
